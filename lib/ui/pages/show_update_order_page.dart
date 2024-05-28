@@ -45,7 +45,7 @@ class ShowUpdateOrderPage extends StatelessWidget {
                   String id = idEditingController.text;
                   String status = statusEditingController.text;
                   if (id.isNotEmpty && status.isNotEmpty) {
-                    print("Vsalue: ${id}, ${status}");
+                    print("Vsalue: $id, $status");
                     BlocProvider.of<OrderBloc>(context)
                         .add(UpdateOrderEvent(id, status));
                   }

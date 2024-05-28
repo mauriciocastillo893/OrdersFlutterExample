@@ -34,7 +34,7 @@ class ShowDeleteOrderPage extends StatelessWidget {
                 onPressed: () {
                   String id = idEditingController.text;
                   if (id.isNotEmpty) {
-                    print("Vsalue: ${id}");
+                    print("Vsalue: $id");
                     BlocProvider.of<OrderBloc>(context)
                         .add(DeleteOrderEvent(id));
                   }

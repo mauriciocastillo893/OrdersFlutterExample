@@ -60,7 +60,7 @@ class ShowCreateOrderPage extends StatelessWidget {
                   if (createdAt.isNotEmpty &&
                       totalAmount.isNotEmpty &&
                       status.isNotEmpty) {
-                    print("Vsalue: ${createdAt}, ${totalAmount}, ${status}");
+                    print("Vsalue: $createdAt, $totalAmount, $status");
                     BlocProvider.of<OrderBloc>(context).add(CreateOrderEvent(
                         OrderModel(
                             createdAt: createdAt,

@@ -9,7 +9,7 @@ import 'package:langspeak/config/providers/order_bloc/order_event.dart';
 import 'package:langspeak/config/providers/order_bloc/order_state.dart';
 
 class ShowOrderPage extends StatelessWidget {
-  const ShowOrderPage({Key? key}) : super(key: key);
+  const ShowOrderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +39,12 @@ class ShowOrderPage extends StatelessWidget {
                 child: BlocBuilder<ConnectivityBloc, ConnectivityState>(
                   builder: (context, state) {
                     if (state is ConnectivityInitial) {
-                      return Text('Checking connectivity...');
+                      return const Text('Checking connectivity...');
                     } else if (state is ConnectivitySuccess) {
                       return Text(
                           '${state.isConnected ? "Connected" : "Not Connected"} ${state.typeOfConnection}');
                     } else if (state is ConnectivityFailure) {
-                      return Text('Not Connected');
+                      return const Text('Not Connected');
                     }
                     return Container();
                   },
@@ -66,7 +66,7 @@ class ShowOrderPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(
-                          '${state.orders[index].toString()}', // Ajusta esto según tus datos
+                          state.orders[index].toString(), // Ajusta esto según tus datos
                         ),
                       );
                     },
