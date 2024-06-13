@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "598385541518",
+    "project_id": "users-b4361",
+    "storage_bucket": "users-b4361.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598385541518:android:6fba78bb96c8b3167d64df",
+        "android_client_info": {
+          "package_name": "com.vexorianindustries.orders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIGtsnlqlPQOjuvk0giiZydUnhQMwjboY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
