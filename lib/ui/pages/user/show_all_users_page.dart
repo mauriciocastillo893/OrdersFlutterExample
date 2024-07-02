@@ -5,9 +5,20 @@ import 'package:langspeak/config/providers/user_bloc/user_event.dart';
 import 'package:langspeak/config/providers/user_bloc/user_state.dart';
 import 'package:langspeak/ui/pages/user/show_one_user_page.dart';
 
-class ShowAllUsersPage extends StatelessWidget {
+class ShowAllUsersPage extends StatefulWidget {
   const ShowAllUsersPage({super.key});
 
+  @override
+  State<ShowAllUsersPage> createState() => _ShowAllUsersPage();
+}
+
+class _ShowAllUsersPage extends State<ShowAllUsersPage> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<UserBloc>().add(const GetAllUsersEvent());
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +72,8 @@ class ShowAllUsersPage extends StatelessWidget {
                   } else if (state is UserErrorState) {
                     return Text(state.message);
                   } else {
-                    return Container();
+                    return const Center(
+                        child: Text("Algo no fue como esperaba"));
                   }
                 },
               )
@@ -71,7 +83,8 @@ class ShowAllUsersPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          BlocProvider.of<UserBloc>(context).add(GetAllUsersEvent());
+          context.read<UserBloc>().add(const GetAllUsersEvent());
+          // BlocProvider.of<UserBloc>(context).add(GetAllUsersEvent());
         },
         child: const Icon(Icons.refresh),
       ),

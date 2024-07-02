@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:langspeak/config/providers/user_bloc/user_bloc.dart';
 import 'package:langspeak/config/providers/user_bloc/user_event.dart';
 import 'package:langspeak/config/providers/user_bloc/user_state.dart';
@@ -11,6 +12,7 @@ class ShowLoginUserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailEditingController = TextEditingController();
     TextEditingController passwordEditingController = TextEditingController();
+    FlutterNativeSplash.remove();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Login (sign-in)"),

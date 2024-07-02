@@ -17,14 +17,12 @@ import 'package:langspeak/ui/pages/user/show_all_users_page.dart';
 import 'package:langspeak/ui/pages/user/show_login_user_page.dart';
 import 'package:langspeak/ui/pages/user/show_one_user_page.dart';
 import 'package:langspeak/ui/pages/user/show_register_user_page.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  FlutterNativeSplash.preserve(
+      widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
   runApp(const MyApp());
 }
 
